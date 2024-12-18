@@ -42,9 +42,11 @@ function calculateRange(angle, velocity) {
 }
 
 // Log messages to the story log
-function logMessage(logId, message) {
+function logMessage(logId, message, isHint = false) {
     const log = document.getElementById(logId);
-    log.innerText += `${message}\n`;
+    const messageClass = isHint ? "hint" : "log-message";
+    const logEntry = `<div class="${messageClass}"><span>${isHint ? "Hint:" : "Shot Result:"}</span>${message}</div>`;
+    log.innerHTML += logEntry;
     log.scrollTop = log.scrollHeight;
 }
 
@@ -52,7 +54,7 @@ function logMessage(logId, message) {
 function loadLevelStory() {
     const { level, story } = levels[currentLevel];
     const storyLog = document.getElementById("story-log");
-    storyLog.innerText = `Level ${level}: ${story}`;
+    storyLog.innerHTML = `<div class="story-message"><span>Level ${level}:</span>${story}</div>`;
     document.getElementById("story-container").style.display = "block";
     document.getElementById("gameplay-container").style.display = "none";
 }
@@ -60,8 +62,8 @@ function loadLevelStory() {
 // Load gameplay for the current level
 function loadLevelGameplay() {
     const { level, velocity, distance } = levels[currentLevel];
-    logMessage("game-log", `Level ${level}: Target Distance: ${distance} meters | Arrow Velocity: ${velocity} m/s`);
-    logMessage("game-log", "Enter an angle between 0 and 90 degrees to hit the target.");
+    logMessage("game-log", `Target Distance: ${distance} meters | Arrow Velocity: ${velocity} m/s`, false);
+    logMessage("game-log", "Enter an angle between 0 and 90 degrees to hit the target.", true);
     document.getElementById("story-container").style.display = "none";
     document.getElementById("gameplay-container").style.display = "block";
 }
@@ -73,33 +75,33 @@ function fireProjectile() {
     const { velocity, distance } = levels[currentLevel];
 
     if (isNaN(angle) || angle < 0 || angle > 90) {
-        logMessage("game-log", "Invalid input. Please enter a valid angle between 0 and 90 degrees.");
+        logMessage("game-log", "Invalid input. Please enter a valid angle between 0 and 90 degrees.", true);
         return;
     }
 
     const range = calculateRange(angle, velocity);
-    logMessage("game-log", `You shot an arrow that landed ${range.toFixed(2)} meters away.`);
+    logMessage("game-log", `Your arrow landed ${range.toFixed(2)} meters away.`, false);
 
     if (Math.abs(range - distance) <= tolerance) {
-        logMessage("game-log", "You hit the target! The crowd cheers.");
+        logMessage("game-log", "You hit the target! Well done!", false);
         currentLevel++;
         if (currentLevel < levels.length) {
+            logMessage("game-log", `Get ready for Level ${levels[currentLevel].level}...`, true);
             loadLevelStory();
         } else {
-            logMessage("game-log", "Congratulations! You have completed all levels and defeated the Sheriff. Nottingham is free!");
+            logMessage("game-log", "You have completed all levels and liberated Nottingham. Congratulations, hero!", false);
             document.getElementById("fire-button").disabled = true;
         }
     } else if (range < distance) {
-        logMessage("game-log", "The arrow fell short. Aim higher.");
+        logMessage("game-log", "The arrow fell short. Aim higher.", true);
     } else {
-        logMessage("game-log", "The arrow overshot. Aim lower.");
+        logMessage("game-log", "The arrow overshot. Aim lower.", true);
     }
 }
 
 // Initialize the game
 function initGame() {
     currentLevel = 0;
-    logMessage("story-log", "Welcome to Robin Hood: Archery Adventure.");
     loadLevelStory();
 }
 
