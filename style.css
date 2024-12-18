@@ -22,7 +22,17 @@ body {
 h1 {
     color: white;
     margin-bottom: 20px;
-    text-shadow: 1px 1px white;
+}
+
+#story-log {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: left;
+    white-space: pre-wrap;
+    border-top: 1px solid white;
+    padding-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 #input-area input {
@@ -37,17 +47,5 @@ h1 {
     background-color: white;
     color: black;
     border: none;
-    font-weight: bold;
     cursor: pointer;
-}
-
-#game-log {
-    margin-top: 20px;
-    font-size: 14px;
-    text-align: left;
-    white-space: pre-wrap;
-    border-top: 1px solid white;
-    padding-top: 10px;
-    max-height: 300px;
-    overflow-y: auto;
 }
