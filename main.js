@@ -1,56 +1,64 @@
-const g = 9.8; // Gravity constant
-const vLevel1 = 20.0; // Initial velocity for Level 1
-const vLevel2 = 25.0; // Initial velocity for Level 2
-const vLevel3 = 30.0; // Initial velocity for Level 3
-const dLevel1 = 30.0; // Distance for Level 1
-const dLevel2 = 50.0; // Distance for Level 2
-const dLevel3 = 70.0; // Distance for Level 3
-const tolerance = 0.5; // Tolerance for hitting the target
+const g = 9.8;
+const levels = [
+    { velocity: 20, distance: 30 },
+    { velocity: 25, distance: 50 },
+    { velocity: 30, distance: 70 }
+];
+let currentLevel = 0;
 
-// Function to convert degrees to radians
 function degreesToRadians(degrees) {
-    return degrees * Math.PI / 180.0;
+    return degrees * Math.PI / 180;
 }
 
-// Function to calculate the range of the projectile
 function calculateRange(angleDegrees, velocity) {
     const angleRadians = degreesToRadians(angleDegrees);
     return (velocity * velocity * Math.sin(2 * angleRadians)) / g;
 }
 
-// Function to handle playing a level
-function playLevel(level) {
-    let velocity, distance;
-    if (level === 1) {
-        velocity = vLevel1;
-        distance = dLevel1;
-    } else if (level === 2) {
-        velocity = vLevel2;
-        distance = dLevel2;
-    } else {
-        velocity = vLevel3;
-        distance = dLevel3;
-    }
-
-    // Get the angle input from the user
-    const userAngle = parseFloat(document.getElementById('angle').value);
+function playLevel() {
+    const angleInput = document.getElementById('angle-input');
     const resultDiv = document.getElementById('result');
 
-    if (isNaN(userAngle) || userAngle < 0 || userAngle > 90) {
-        resultDiv.innerHTML = "Please enter a valid angle between 0 and 90 degrees.";
+    const angle = parseFloat(angleInput.value);
+    if (isNaN(angle) || angle < 0 || angle > 90) {
+        resultDiv.innerText = "Please enter a valid angle between 0 and 90 degrees.";
+        resultDiv.className = "fail";
         return;
     }
 
-    // Calculate the range based on the input angle
-    const range = calculateRange(userAngle, velocity);
-    resultDiv.innerHTML = `Your projectile landed at ${range.toFixed(2)} meters.<br>`;
+    const levelData = levels[currentLevel];
+    const range = calculateRange(angle, levelData.velocity);
 
-    // Check if the player hit the target
-    if (Math.abs(range - distance) <= tolerance) {
-        resultDiv.innerHTML += "Congratulations! You hit the target!";
-    } else if (range < distance) {
-        resultDiv.innerHTML += "Your projectile fell short of the target. Try a larger angle.";
+    if (Math.abs(range - levelData.distance) <= 0.5) {
+        resultDiv.innerText = `🎉 Congratulations! You hit the target at ${range.toFixed(2)} meters!`;
+        resultDiv.className = "success";
+        currentLevel++;
+        if (currentLevel < levels.length) {
+            setTimeout(() => {
+                loadLevel();
+                resultDiv.innerText = "";
+            }, 2000);
+        } else {
+            resultDiv.innerText += "\nYou've completed all levels! Well done! 🎉";
+        }
+    } else if (range < levelData.distance) {
+        resultDiv.innerText = `Your projectile landed at ${range.toFixed(2)} meters. Try a larger angle.`;
+        resultDiv.className = "fail";
     } else {
-        resultDiv.innerHTML += "Your projectile overshot the target. Try a smaller angle.";
+        resultDiv.innerText = `Your projectile landed at ${range.toFixed(2)} meters. Try a smaller angle.`;
+        resultDiv.className = "fail";
     }
 }
+
+function loadLevel() {
+    if (currentLevel < levels.length) {
+        const levelData = levels[currentLevel];
+        document.getElementById('target-distance').innerText = levelData.distance;
+        document.getElementById('initial-velocity').innerText = levelData.velocity;
+        document.getElementById('angle-input').value = "";
+        document.querySelector('h2').innerText = `Level ${currentLevel + 1}`;
+    }
+}
+
+document.getElementById('launch-button').addEventListener('click', playLevel);
+window.onload = loadLevel;
