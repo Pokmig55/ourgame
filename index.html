@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projectile Motion Game</title>
+    <title>Projectile RPG</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🎯 Projectile Motion Game</h1>
-        <p>Welcome to the game! Your task is to hit the target using the correct launch angle.</p>
-        <div id="game-area">
-            <div id="level-info">
-                <h2>Level 1</h2>
-                <p>Target Distance: <span id="target-distance">30</span> meters</p>
-                <p>Initial Velocity: <span id="initial-velocity">20</span> m/s</p>
-            </div>
-            <label for="angle-input">Enter Launch Angle (degrees):</label>
-            <input type="number" id="angle-input" min="0" max="90" placeholder="Angle">
-            <button id="launch-button">Launch!</button>
+    <div id="game-container">
+        <h1>⚔ Projectile RPG</h1>
+        <div id="game-display">
+            <pre>
+               ______
+              /      \
+             |  O  O  |  Beware of the Monster!
+             |    >   |
+              \______/
+            </pre>
+            <div id="story">A monster is blocking your path! Use your skills to defeat it.</div>
         </div>
-        <div id="result"></div>
+        <div id="input-area">
+            <label for="angle-input">Enter Launch Angle (degrees):</label>
+            <input type="number" id="angle-input" min="0" max="90">
+            <button id="fire-button">Fire!</button>
+        </div>
+        <div id="game-log"></div>
     </div>
     <script src="game.js"></script>
 </body>
