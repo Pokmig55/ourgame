@@ -17,15 +17,6 @@ const levels = [
     { 
         level: 2, velocity: 25, distance: 50, 
         story: `
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    __________________________
-   |                          |
-   |       VILLAGE SQUARE     |
-   |__________________________|
-    /\\         /\\         /\\
-   /  \\       /  \\       /  \\
-  [____]     [____]     [____]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Villagers gather in the square to watch the archery contest.
         `,
         ascii: `
@@ -42,27 +33,7 @@ Villagers gather in the square to watch the archery contest.
     { 
         level: 3, velocity: 30, distance: 70, 
         story: `
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     ^                 ^
-  / \               / \
- /   \             /   \
-(_____)           (_____)
- |   |  _   _   _  |   |
- | O |_| |_| |_| |_| O |
- |-  |          _  | - |
- |   |   - _^_     |   |
- |  _|    //|\\  - |   |
- |   |   ///|\\\   |  -|
- |-  |_  |||||||   |   |
- |   |   |||||||   |-  |
- |___|___|||||||___|___|
-         (      (
-          \      \
-           )      )
-           |      |
-           (      (
-            \      \
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The Sheriff’s castle looms ahead. Can Robin infiltrate it?
         `,
         ascii: `
