@@ -25,7 +25,7 @@ body {
 
 .story-ascii {
     font-family: monospace;
-    text-align: center;
+    text-align: left;
     white-space: pre-wrap;
     line-height: 1.2;
     margin-bottom: 15px;
