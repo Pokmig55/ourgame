@@ -1,5 +1,5 @@
 body {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", monospace;
     background-color: black;
     color: white;
     margin: 0;
@@ -8,35 +8,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 #game-container {
     width: 80%;
     max-width: 600px;
+    text-align: center;
     border: 2px solid white;
     padding: 20px;
-    text-align: center;
     background-color: black;
 }
 
 h1 {
-    margin-bottom: 20px;
     color: white;
+    margin-bottom: 20px;
     text-shadow: 1px 1px white;
-}
-
-#game-display {
-    margin-bottom: 20px;
-}
-
-pre {
-    font-size: 16px;
-    white-space: pre-wrap;
-    text-align: center;
-}
-
-#input-area {
-    margin-bottom: 20px;
 }
 
 #input-area input {
@@ -47,18 +34,20 @@ pre {
 #input-area button {
     padding: 5px 10px;
     font-size: 16px;
-    cursor: pointer;
     background-color: white;
     color: black;
     border: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #game-log {
     margin-top: 20px;
     font-size: 14px;
-    white-space: pre-line;
     text-align: left;
+    white-space: pre-wrap;
     border-top: 1px solid white;
     padding-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
 }
