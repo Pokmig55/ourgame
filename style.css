@@ -19,59 +19,34 @@ body {
     background-color: black;
 }
 
-h1 {
-    color: white;
-    margin-bottom: 20px;
-}
-
 #story-container, #gameplay-container {
     margin-top: 20px;
 }
 
-#story-log, #game-log {
-    margin-top: 20px;
-    font-size: 14px;
+.story-ascii {
+    font-family: monospace;
     text-align: left;
     white-space: pre-wrap;
-    border-top: 1px solid white;
-    padding-top: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-    line-height: 1.6; /* Improved line spacing */
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: lightblue;
 }
 
-#story-log .story-message,
-#game-log .log-message {
-    margin-bottom: 10px; /* Adds spacing between messages */
+.log-message {
+    color: lightgreen;
 }
 
-#story-log .story-message span,
-#game-log .log-message span {
-    display: block;
-    font-weight: bold; /* Highlights key labels */
-    margin-top: 5px;
+.hint {
+    color: yellow;
+    font-style: italic;
 }
 
-#story-log .story-message {
-    color: lightblue; /* Makes story text visually distinct */
-}
-
-#game-log .log-message {
-    color: lightgreen; /* Makes gameplay messages clearer */
-}
-
-#skip-button, #fire-button {
-    margin-top: 10px;
-    padding: 10px 20px;
+#fire-button, #skip-button {
+    margin-top: 15px;
+    padding: 10px;
     font-size: 16px;
     background-color: white;
     color: black;
     border: none;
     cursor: pointer;
-}
-
-#input-area input {
-    padding: 5px;
-    font-size: 16px;
-    margin-right: 10px;
 }
