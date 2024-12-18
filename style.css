@@ -25,11 +25,14 @@ body {
 
 .story-ascii {
     font-family: monospace;
-    text-align: left;
     white-space: pre-wrap;
     line-height: 1.2;
-    margin-bottom: 15px;
     color: lightblue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .log-message {
