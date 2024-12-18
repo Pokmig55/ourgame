@@ -37,6 +37,27 @@ h1 {
     padding-top: 10px;
     max-height: 300px;
     overflow-y: auto;
+    line-height: 1.6; /* Improved line spacing */
+}
+
+#story-log .story-message,
+#game-log .log-message {
+    margin-bottom: 10px; /* Adds spacing between messages */
+}
+
+#story-log .story-message span,
+#game-log .log-message span {
+    display: block;
+    font-weight: bold; /* Highlights key labels */
+    margin-top: 5px;
+}
+
+#story-log .story-message {
+    color: lightblue; /* Makes story text visually distinct */
+}
+
+#game-log .log-message {
+    color: lightgreen; /* Makes gameplay messages clearer */
 }
 
 #skip-button, #fire-button {
