@@ -1,92 +1,53 @@
-// Constants for game physics
-const g = 9.8;
-const levels = [
-    { level: 1, velocity: 20, distance: 30 },
-    { level: 2, velocity: 25, distance: 50 },
-    { level: 3, velocity: 30, distance: 70 }
-];
-const tolerance = 0.5;
-
-let currentLevel = 0;
-
-// Utility: Convert degrees to radians
-function degreesToRadians(degrees) {
-    return (degrees * Math.PI) / 180.0;
+body {
+    font-family: "Courier New", monospace;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-// Utility: Calculate projectile range
-function calculateRange(angle, velocity) {
-    const radians = degreesToRadians(angle);
-    return ((velocity ** 2) * Math.sin(2 * radians)) / g;
+#game-container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border: 2px solid white;
+    padding: 20px;
+    background-color: black;
 }
 
-// Utility: Log messages
-function logMessage(message) {
-    const gameLog = document.getElementById("game-log");
-    gameLog.innerText += `${message}\n`;
-    gameLog.scrollTop = gameLog.scrollHeight;
+h1 {
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px white;
 }
 
-// Load the current level
-function loadLevel() {
-    const levelInfo = document.getElementById("level-info");
-    const instructions = document.getElementById("instructions");
-    const { level, velocity, distance } = levels[currentLevel];
-
-    levelInfo.innerText = `Level ${level}`;
-    instructions.innerText = `Target Distance: ${distance} meters, Velocity: ${velocity} m/s.\nEnter the correct angle to hit the target!`;
-    logMessage(`🎯 Welcome to Level ${level}!`);
+#input-area input {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
 }
 
-// Fire the projectile
-function fireProjectile() {
-    const angleInput = document.getElementById("angle-input");
-    const angle = parseFloat(angleInput.value);
-    const { velocity, distance } = levels[currentLevel];
-
-    if (isNaN(angle) || angle < 0 || angle > 90) {
-        logMessage("⚠ Invalid angle! Please enter a value between 0 and 90.");
-        return;
-    }
-
-    const range = calculateRange(angle, velocity);
-    logMessage(`🎯 You fired a projectile that landed at ${range.toFixed(2)} meters.`);
-
-    if (Math.abs(range - distance) <= tolerance) {
-        logMessage("🎉 Congratulations! You hit the target!");
-        currentLevel++;
-
-        if (currentLevel < levels.length) {
-            logMessage(`Proceeding to Level ${levels[currentLevel].level}...`);
-            loadLevel();
-        } else {
-            logMessage("🎊 You've completed all levels! Well done!");
-            endGame();
-        }
-    } else if (range < distance) {
-        logMessage("❌ Your projectile fell short. Try a larger angle.");
-    } else {
-        logMessage("❌ Your projectile overshot the target. Try a smaller angle.");
-    }
+#input-area button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-// End the game
-function endGame() {
-    const fireButton = document.getElementById("fire-button");
-    fireButton.disabled = true;
-    logMessage("🏆 Game over! Thanks for playing.");
+#game-log {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: left;
+    white-space: pre-wrap;
+    border-top: 1px solid white;
+    padding-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
 }
-
-// Initialize the game
-function initGame() {
-    currentLevel = 0;
-    loadLevel();
-}
-
-// Add event listener to the fire button
-document.getElementById("fire-button").addEventListener("click", fireProjectile);
-
-// Start the game
-window.onload = initGame;
-
-                                                        
