@@ -3,30 +3,72 @@ const g = 9.8;
 const levels = [
     { 
         level: 1, velocity: 20, distance: 30, 
-        story: "Sherwood Forest is alive with the rustle of leaves as Robin Hood hones his archery skills. This is just the beginning of a great adventure." 
+        story: `
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       /\\       🌲   🌲        /\\
+      /  \\   🌳        🌳    /  \\
+     /    \\       🌲         /    \\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sherwood Forest: Robin Hood practices his aim amidst the trees.
+        `,
+        ascii: `
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       /\\        🌲   🌲       /\\
+      /__\\   🌳       🌳    /__\\
+     [____]           🌲   [____]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        `,
     },
     { 
         level: 2, velocity: 25, distance: 50, 
-        story: "The village square is bustling with excitement. You must win the archery contest to earn the villagers’ trust and support." 
+        story: `
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    __________________________
+   |                          |
+   |       VILLAGE SQUARE     |
+   |__________________________|
+    /\\         /\\         /\\
+   /  \\       /  \\       /  \\
+  [____]     [____]     [____]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Villagers gather in the square to watch the archery contest.
+        `,
+        ascii: `
+    __________________________
+   |                          |
+   |       VILLAGE SQUARE     |
+   |__________________________|
+    /\\         /\\         /\\
+   /__\\       /__\\       /__\\
+  [____]     [____]     [____]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        `,
     },
     { 
         level: 3, velocity: 30, distance: 70, 
-        story: "Captured villagers are tied up by the Sheriff’s men. Only your precise shots can cut the ropes and set them free." 
+        story: `
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       ||  ||     ||  ||
+    [] ||  ||  [] ||  || []
+    || ||  ||     ||  || ||
+    || ||  ||     ||  || ||
+   _||_||__||_____|_|_||_||_
+  |_________________________|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Sheriff’s castle looms ahead. Can Robin infiltrate it?
+        `,
+        ascii: `
+       ||  ||     ||  ||
+    [] ||  ||  [] ||  || []
+    || ||  ||     ||  || ||
+    || ||  ||     ||  || ||
+   _||_||__||_____|_|_||_||_
+  |_________________________|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        `,
     },
-    { 
-        level: 4, velocity: 35, distance: 90, 
-        story: "The Sheriff’s men have set a trap to intercept a wagon of stolen gold. Protect the wagon and thwart their plans!" 
-    },
-    { 
-        level: 5, velocity: 40, distance: 110, 
-        story: "You are invited to the Sheriff’s grand tournament. Outshoot his guards to prove you’re the best archer in the land." 
-    },
-    { 
-        level: 6, velocity: 45, distance: 130, 
-        story: "The final duel with the Sheriff himself! One perfect shot will decide the fate of Nottingham and its people." 
-    }
+    // Add more levels as needed...
 ];
-const tolerance = 0.5;
 
 let currentLevel = 0;
 
@@ -41,20 +83,23 @@ function calculateRange(angle, velocity) {
     return ((velocity ** 2) * Math.sin(2 * radians)) / g;
 }
 
-// Log messages to the story log
+// Log messages to the game log
 function logMessage(logId, message, isHint = false) {
     const log = document.getElementById(logId);
     const messageClass = isHint ? "hint" : "log-message";
-    const logEntry = `<div class="${messageClass}"><span>${isHint ? "Hint:" : "Shot Result:"}</span>${message}</div>`;
+    const logEntry = `<div class="${messageClass}">${message}</div>`;
     log.innerHTML += logEntry;
     log.scrollTop = log.scrollHeight;
 }
 
-// Load the current level story
+// Load the current level story with ASCII art
 function loadLevelStory() {
-    const { level, story } = levels[currentLevel];
+    const { level, story, ascii } = levels[currentLevel];
     const storyLog = document.getElementById("story-log");
-    storyLog.innerHTML = `<div class="story-message"><span>Level ${level}:</span>${story}</div>`;
+    storyLog.innerHTML = `
+        <div class="story-ascii">${ascii}</div>
+        <div class="story-message">Level ${level}: ${story}</div>
+    `;
     document.getElementById("story-container").style.display = "block";
     document.getElementById("gameplay-container").style.display = "none";
 }
@@ -62,7 +107,7 @@ function loadLevelStory() {
 // Load gameplay for the current level
 function loadLevelGameplay() {
     const { level, velocity, distance } = levels[currentLevel];
-    logMessage("game-log", `Target Distance: ${distance} meters | Arrow Velocity: ${velocity} m/s`, false);
+    logMessage("game-log", `Target Distance: ${distance} meters | Arrow Velocity: ${velocity} m/s`);
     logMessage("game-log", "Enter an angle between 0 and 90 degrees to hit the target.", true);
     document.getElementById("story-container").style.display = "none";
     document.getElementById("gameplay-container").style.display = "block";
@@ -80,16 +125,16 @@ function fireProjectile() {
     }
 
     const range = calculateRange(angle, velocity);
-    logMessage("game-log", `Your arrow landed ${range.toFixed(2)} meters away.`, false);
+    logMessage("game-log", `Your arrow landed ${range.toFixed(2)} meters away.`);
 
-    if (Math.abs(range - distance) <= tolerance) {
-        logMessage("game-log", "You hit the target! Well done!", false);
+    if (Math.abs(range - distance) <= 0.5) {
+        logMessage("game-log", "You hit the target! Well done!");
         currentLevel++;
         if (currentLevel < levels.length) {
-            logMessage("game-log", `Get ready for Level ${levels[currentLevel].level}...`, true);
+            logMessage("game-log", `Prepare for Level ${levels[currentLevel].level}...`);
             loadLevelStory();
         } else {
-            logMessage("game-log", "You have completed all levels and liberated Nottingham. Congratulations, hero!", false);
+            logMessage("game-log", "You have completed all levels. Nottingham is free! Congratulations!");
             document.getElementById("fire-button").disabled = true;
         }
     } else if (range < distance) {
