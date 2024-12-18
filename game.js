@@ -4,12 +4,7 @@ const levels = [
     { 
         level: 1, velocity: 20, distance: 30, 
         story: `
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-       /\\       🌲   🌲        /\\
-      /  \\   🌳        🌳    /  \\
-     /    \\       🌲         /    \\
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Sherwood Forest: Robin Hood practices his aim amidst the trees.
+        Sherwood Forest: Robin Hood practices his aim amidst the trees.
         `,
         ascii: `
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
