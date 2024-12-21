@@ -1,3 +1,4 @@
+
 body {
     font-family: "Courier New", monospace;
     background-color: black;
@@ -17,10 +18,7 @@ body {
     border: 2px solid white;
     padding: 20px;
     background-color: black;
-}
-
-#story-container, #gameplay-container {
-    margin-top: 20px;
+    box-shadow: 0 0 10px lightblue;
 }
 
 .story-ascii {
@@ -33,9 +31,10 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    padding: 10px 0;
 }
 
-.log-message {
+.success {
     color: lightgreen;
 }
 
@@ -52,4 +51,20 @@ body {
     color: black;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#fire-button:hover, #skip-button:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 60%;
+    margin: 10px 0;
+    border: 1px solid lightblue;
+    border-radius: 4px;
 }
