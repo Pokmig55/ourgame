@@ -1,54 +1,79 @@
+/* styles.css */
+
 body {
     font-family: "Courier New", monospace;
-    background-color: black;
-    color: white;
     margin: 0;
     padding: 0;
+    background-color: black;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    text-align: center;
 }
 
-#game-container {
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    border: 2px solid white;
+#front-page-container {
+    max-width: 90%;
     padding: 20px;
+    border: 2px solid white;
     background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-pre {
+.ascii-art pre {
     font-family: monospace;
-    white-space: pre-wrap;
-    line-height: 1.2;
+    font-size: 12px; /* Adjust font size for mobile readability */
+    line-height: 1.1;
     color: lightblue;
-    text-align: center;
+    white-space: pre-wrap;
+    margin: 0 auto 20px auto;
+    overflow-x: auto; /* Enable horizontal scrolling for large ASCII art */
 }
 
-.success {
-    color: lightgreen;
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
 }
 
-.hint {
-    color: yellow;
-    font-style: italic;
+p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: lightgray;
 }
 
-#fire-button, #skip-button, #next-level-button {
-    margin-top: 15px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: white;
+button {
+    padding: 15px 20px;
+    font-size: 1.2em;
     color: black;
+    background-color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-input {
-    padding: 10px;
-    font-size: 16px;
-    width: 60%;
-    margin: 10px 0;
+button:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 12px 18px;
+        font-size: 1em;
+    }
+
+    .ascii-art pre {
+        font-size: 10px;
+    }
 }
