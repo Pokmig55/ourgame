@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robin Hood Archery Game</title>
+    <title>Robin Hood Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,14 +17,9 @@
         <!-- Gameplay Section -->
         <div id="gameplay-container" style="display: none;">
             <div id="game-log"></div>
-            <input id="angle-input" type="number" placeholder="Enter the correct answer" />
-            <button id="fire-button">Submit</button>
-        </div>
-
-        <!-- Congratulations Section -->
-        <div id="congrats-container" style="display: none;">
-            <div id="congrats-message"></div>
-            <button id="next-level-button">Next Level</button>
+            <input id="angle-input" type="number" placeholder="Enter your answer" />
+            <button id="fire-button">Enter</button>
+            <button id="next-level-button" style="display: none;">Next Level</button>
         </div>
     </div>
     <script src="game.js"></script>
