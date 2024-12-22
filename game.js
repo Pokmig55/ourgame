@@ -11,8 +11,8 @@ const levels = [
   |:#:::||||::#::|  
  In the heart of Sherwood Forest, Robin Hood faced a challenge to rob a
  Nobleman who was on his way to the vault to store a sack full of gold coins.`,
-        targetHint: "What is the speed of the arrow needed to hit the target in m/s?",
-        correctAngle: 10.67,
+        targetHint: "The noble carriage is on a hill. What is the correct answer to hit the target?",
+        correctAngle: 11,
     },
     {
         level: 2,
@@ -24,7 +24,7 @@ const levels = [
   \\ \\    / /  
    '--' '--'  
 Village Square: Robin's archery skills are tested before a crowd.`,
-        targetHint: "The target is at a balanced distance. Try a medium angle.",
+        targetHint: "Try a balanced angle.",
         correctAngle: 35,
     },
 ];
@@ -34,10 +34,7 @@ let currentLevel = 0;
 function displayStory() {
     const { level, story } = levels[currentLevel];
     const storyLog = document.getElementById("story-log");
-    storyLog.innerHTML = `
-        <div>Level ${level}</div>
-        <pre>${story}</pre>
-    `;
+    storyLog.innerHTML = `<div>Level ${level}</div><pre>${story}</pre>`;
     document.getElementById("story-container").style.display = "block";
     document.getElementById("gameplay-container").style.display = "none";
 }
@@ -45,11 +42,7 @@ function displayStory() {
 function loadGameplay() {
     const { level, targetHint } = levels[currentLevel];
     const gameLog = document.getElementById("game-log");
-    gameLog.innerHTML = `
-        <div>Level ${level}</div>
-        <div>${targetHint}</div>
-        <div>Enter your answer:</div>
-    `;
+    gameLog.innerHTML = `<div>Level ${level}</div><div>${targetHint}</div>`;
     document.getElementById("story-container").style.display = "none";
     document.getElementById("gameplay-container").style.display = "block";
 }
@@ -59,16 +52,19 @@ function handleInput() {
     const { correctAngle } = levels[currentLevel];
     if (Math.abs(angleInput - correctAngle) <= tolerance) {
         logFeedback("Great shot! You've hit the target!");
-        currentLevel++;
-        if (currentLevel < levels.length) {
-            logFeedback("Get ready for the next level...");
-            displayStory();
-        } else {
-            logFeedback("You've completed the game. Congratulations!");
-            document.getElementById("fire-button").disabled = true;
-        }
+        document.getElementById("next-level-button").style.display = "block";
     } else {
         logFeedback("Missed! Try again.", true);
+    }
+}
+
+function nextLevel() {
+    currentLevel++;
+    if (currentLevel < levels.length) {
+        displayStory();
+        document.getElementById("next-level-button").style.display = "none";
+    } else {
+        alert("Congratulations! You've completed the game.");
     }
 }
 
@@ -86,4 +82,5 @@ function initGame() {
 
 document.getElementById("skip-button").addEventListener("click", loadGameplay);
 document.getElementById("fire-button").addEventListener("click", handleInput);
+document.getElementById("next-level-button").addEventListener("click", nextLevel);
 window.onload = initGame;
