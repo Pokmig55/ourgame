@@ -1,4 +1,3 @@
-/* Global body styles */
 body {
     font-family: "Courier New", monospace;
     background-color: black;
@@ -11,51 +10,6 @@ body {
     height: 100vh;
 }
 
-/* Front page container */
-#front-page-container {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid white;
-    background-color: black;
-    max-width: 600px;
-    width: 80%;
-    box-shadow: 0 0 10px white;
-}
-
-/* ASCII art */
-.ascii-art {
-    font-family: monospace;
-    color: lightblue;
-    margin-bottom: 20px;
-}
-
-/* Title styles */
-h1 {
-    margin-bottom: 10px;
-    color: lightgreen;
-}
-
-/* Paragraph styles */
-p {
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* Start button */
-#start-game-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-}
-
-#start-game-button:hover {
-    background-color: lightgray;
-}
-
-/* Gameplay container */
 #game-container {
     width: 80%;
     max-width: 600px;
@@ -65,16 +19,12 @@ p {
     background-color: black;
 }
 
-.story-ascii {
+pre {
     font-family: monospace;
     white-space: pre-wrap;
     line-height: 1.2;
     color: lightblue;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
 }
 
 .success {
@@ -86,7 +36,7 @@ p {
     font-style: italic;
 }
 
-#fire-button, #skip-button {
+#fire-button, #skip-button, #next-level-button {
     margin-top: 15px;
     padding: 10px;
     font-size: 16px;
