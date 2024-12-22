@@ -7,20 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="game-container">
-        <!-- Story Section -->
-        <div id="story-container">
-            <div id="story-log"></div>
-            <button id="skip-button">Next Story</button>
+    <div id="front-page-container">
+        <div class="ascii-art">
+            <pre>
+    _______  __    _  _______  __   __  ___   __    _ 
+   |       ||  |  | ||       ||  | |  ||   | |  |  | |
+   |   _   ||   |_| ||    ___||  |_|  ||   | |   |_| |
+   |  | |  ||       ||   |___ |       ||   | |       |
+   |  |_|  ||  _    ||    ___||_     _||   | |  _    |
+   |       || | |   ||   |___   |   |  |   | | | |   |
+   |_______||_|  |__||_______|  |___|  |___| |_|  |__|
+            </pre>
         </div>
-
-        <!-- Gameplay Section -->
-        <div id="gameplay-container" style="display: none;">
-            <div id="game-log"></div>
-            <input id="angle-input" type="number" placeholder="Enter the your answer" />
-            <button id="fire-button">Enter</button>
-        </div>
+        <h1>Robin Hood: Archery Adventure</h1>
+        <p>Welcome to the legendary adventures of Robin Hood! Test your skill as the famous outlaw, master the art of archery, and help the people of Sherwood Forest.</p>
+        <button id="start-game-button">Start Game</button>
     </div>
-    <script src="game.js"></script>
+
+    <script>
+        document.getElementById("start-game-button").addEventListener("click", () => {
+            window.location.href = "game.html"; // Change this to your game file URL
+        });
+    </script>
 </body>
 </html>
