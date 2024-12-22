@@ -11,7 +11,7 @@ const levels = [
   |:#:::||||::#::|  
  In the heart of Sherwood Forest, Robin Hood faced a challenge to rob a
  Nobleman who was on his way to the vault to store a sack full of gold coins.`,
-        targetHint: "The noble carriage was already on a hill that had a height 3.05 meters high and 10 meters away, awaited his arrow. Standing at 2.00 meters tall,Robin needed to shoot The horse-drawn carriage to cut the rope that tied the sack containing the gold coins.",
+        targetHint: "The noble carriage was already on a hill that had a height 3.05 meters high and 10 meters away, awaited his arrow. Standing at 2.00 meters tall,Robin needed to shoot The horse-drawn carriage to cut the rope that tied the sack containing the gold coins.What is initial speed of arrow to hit the target in m/s?",
         correctAngle: 30,
     },
     {
