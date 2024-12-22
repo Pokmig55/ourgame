@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robin Hood Archery Game</title>
+    <title>Robin Hood: Archery Adventure</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="front-page-container">
         <div class="ascii-art">
             <pre>
-  __          __  _                            _          _   _                                       
- \ \        / / | |                          | |        | | | |                                      
-  \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___   | |_| |__   ___    __ _  __ _ _ __ ___   ___ 
-   \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \  | __| '_ \ / _ \  / _` |/ _` | '_ ` _ \ / _ \
-    \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | |_| | | |  __/ | (_| | (_| | | | | | |  __/
-     \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/   \__|_| |_|\___|  \__, |\__,_|_| |_| |_|\___|
-                                                                           __/ |                     
-                                                                          |___/   
+    _______  __    _  _______  __   __  ___   __    _ 
+   |       ||  |  | ||       ||  | |  ||   | |  |  | |
+   |   _   ||   |_| ||    ___||  |_|  ||   | |   |_| |
+   |  | |  ||       ||   |___ |       ||   | |       |
+   |  |_|  ||  _    ||    ___||_     _||   | |  _    |
+   |       || | |   ||   |___   |   |  |   | | | |   |
+   |_______||_|  |__||_______|  |___|  |___| |_|  |__|
             </pre>
         </div>
         <h1>Robin Hood: Archery Adventure</h1>
-        <p>Welcome to the legendary adventures of Robin Hood! Test your skill as the famous outlaw, master the art of archery, and help the people of Sherwood Forest.</p>
+        <p>
+            Join Robin Hood in his legendary adventures. Test your skills, master the bow, 
+            and bring justice to Sherwood Forest!
+        </p>
         <button id="start-game-button">Start Game</button>
     </div>
 
     <script>
+        // Redirect to the game page
         document.getElementById("start-game-button").addEventListener("click", () => {
-      
+            window.location.href = "game.html"; // Ensure "game.html" exists in the same directory
         });
     </script>
 </body>
 </html>
+
