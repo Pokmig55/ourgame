@@ -9,25 +9,23 @@ const levels = [
   |::::::__::::::|  
   |:::::/||\\:::::|  
   |:#:::||||::#::|  
-  
-Robin Hood faced a challenge in Sherwood Forest.
-The noble carriage awaited his arrow on a hill, 
-3.05 meters high and 10 meters away.
-Standing at 2 meters tall, Robin must aim his bow
-to cut the rope tying the sack of gold coins.
-Calculate the speed of the arrow with a 40° angle.`,
-        targetHint: "What is the initial speed of the arrow to hit the target?",
-        correctAnswer: 35.0,
+ In the heart of Sherwood Forest, Robin Hood faced a challenge to rob a
+ Nobleman who was on his way to the vault to store a sack full of gold coins.`,
+        targetHint: "The noble carriage is on a hill. What is the correct answer to hit the target?",
+        correctAngle: 11,
     },
     {
         level: 2,
-        story: `The Sheriff of Nottingham stole the people's treasure!
-A silver crown sat 100 meters away. Robin aimed
-at a 45° angle, pulling back his bowstring. The arrow
-flew through the air, striking the crown with precision.
-How long does it take for the arrow to hit the target?`,
-        targetHint: "Calculate the time to hit the target assuming no air resistance.",
-        correctAnswer: 5.5,
+        story: `
+   __||__  
+  / .--. \\  
+  / /    \\ \\  
+ | |      | |  
+  \\ \\    / /  
+   '--' '--'  
+Village Square: Robin's archery skills are tested before a crowd.`,
+        targetHint: "Try a balanced angle.",
+        correctAngle: 35,
     },
 ];
 
@@ -36,27 +34,27 @@ let currentLevel = 0;
 function displayStory() {
     const { level, story } = levels[currentLevel];
     const storyLog = document.getElementById("story-log");
-    storyLog.innerHTML = `<h2>Level ${level}</h2><p>${story}</p>`;
+    storyLog.innerHTML = `<div>Level ${level}</div><pre>${story}</pre>`;
     document.getElementById("story-container").style.display = "block";
     document.getElementById("gameplay-container").style.display = "none";
 }
 
 function loadGameplay() {
-    const { targetHint } = levels[currentLevel];
+    const { level, targetHint } = levels[currentLevel];
     const gameLog = document.getElementById("game-log");
-    gameLog.innerHTML = `<p>${targetHint}</p>`;
+    gameLog.innerHTML = `<div>Level ${level}</div><div>${targetHint}</div>`;
     document.getElementById("story-container").style.display = "none";
     document.getElementById("gameplay-container").style.display = "block";
 }
 
 function handleInput() {
-    const userAnswer = parseFloat(document.getElementById("angle-input").value);
-    const { correctAnswer } = levels[currentLevel];
-    if (Math.abs(userAnswer - correctAnswer) <= tolerance) {
-        alert("Great shot! You've completed this level!");
+    const angleInput = parseFloat(document.getElementById("angle-input").value);
+    const { correctAngle } = levels[currentLevel];
+    if (Math.abs(angleInput - correctAngle) <= tolerance) {
+        logFeedback("Great shot! You've hit the target!");
         document.getElementById("next-level-button").style.display = "block";
     } else {
-        alert("Missed! Try again.");
+        logFeedback("Missed! Try again.", true);
     }
 }
 
@@ -66,8 +64,15 @@ function nextLevel() {
         displayStory();
         document.getElementById("next-level-button").style.display = "none";
     } else {
-        alert("Congratulations! You've completed the game!");
+        alert("Congratulations! You've completed the game.");
     }
+}
+
+function logFeedback(message, isHint = false) {
+    const log = document.getElementById("game-log");
+    const messageClass = isHint ? "hint" : "success";
+    log.innerHTML += `<div class="${messageClass}">${message}</div>`;
+    log.scrollTop = log.scrollHeight;
 }
 
 function initGame() {
