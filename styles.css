@@ -1,75 +1,70 @@
-/* General Styles */
+
+/* General Styling */
 body {
     font-family: "Courier New", monospace;
-    background-color: black;
-    color: white;
     margin: 0;
     padding: 0;
+    background-color: black;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-#game-container {
+/* Front Page Styling */
+#front-page-container {
+    text-align: center;
     width: 90%;
     max-width: 600px;
-    background-color: white;
-    color: black;
-    border: 5px solid black;
-    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.ascii-art pre {
+    font-family: monospace;
+    color: lightblue;
+    white-space: pre-wrap;
     text-align: center;
 }
 
-/* Story and Gameplay Sections */
-#story-log, #game-log {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 5px;
-    border: 2px solid white;
-    font-size: 16px;
-    line-height: 1.5;
-    white-space: pre-wrap; /* Preserve formatting */
-    height: auto; /* Adjust height to fit content */
-}
-
-/* Buttons and Inputs */
 button {
     margin-top: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
+    background-color: white;
+    color: black;
+    border: none;
     cursor: pointer;
-    font-weight: bold;
 }
 
 button:hover {
-    background-color: white;
-    color: black;
+    background-color: lightgray;
 }
 
-#angle-input {
-    width: 100%;
+/* Game Page Styling */
+#game-container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+#story-container,
+#gameplay-container {
+    margin-top: 20px;
+}
+
+input {
     padding: 10px;
     font-size: 16px;
-    border: 2px solid white;
-    border-radius: 5px;
-    margin: 15px 0;
-    background-color: black;
-    color: white;
-}
-
-/* Feedback Messages */
-.success {
-    color: lightgreen;
-    font-weight: bold;
+    margin-top: 10px;
+    width: 80%;
 }
 
 .hint {
@@ -77,18 +72,11 @@ button:hover {
     font-style: italic;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    #game-container {
-        padding: 15px;
-    }
+.success {
+    color: lightgreen;
+}
 
-    button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    #angle-input {
-        font-size: 14px;
-    }
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
 }
