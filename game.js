@@ -38,7 +38,7 @@ The Merry Men cheered as Robin retrieved the crown.
 
 "One shot, one victory," Robin said,smiling.
 "This is just the beginning." And with that,
-he vowed to continue fighting for justice in Sherwood Forest.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  he vowed to continue fighting for justice in Sherwood Forest.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,
         targetHint: "Robin Hood aims at a silver crown placed 100 meters away, shooting an arrow at a 45° angle with an initial velocity of 40 m/s. How long does it take for the arrow to reach the target, and at what height will it strike the crown? Assume no air resistance.",
         correctAngle: 35,
