@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robin Hood Game</title>
+    <title>Robin Hood: Archery Adventure</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="game-container">
         <!-- Story Section -->
         <div id="story-container">
-            <div id="story-log"></div>
-            <button id="skip-button">Skip Story</button>
+            <div id="story-log">
+                <!-- Story content will be dynamically loaded -->
+            </div>
+            <button id="skip-button">Start Gameplay</button>
         </div>
 
         <!-- Gameplay Section -->
         <div id="gameplay-container" style="display: none;">
-            <div id="game-log"></div>
+            <div id="game-log">
+                <!-- Gameplay log content will be dynamically loaded -->
+            </div>
             <input id="angle-input" type="number" placeholder="Enter your answer" />
-            <button id="fire-button">Enter</button>
+            <button id="fire-button">Submit Answer</button>
             <button id="next-level-button" style="display: none;">Next Level</button>
         </div>
     </div>
+
     <script src="game.js"></script>
 </body>
 </html>
