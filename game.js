@@ -20,14 +20,12 @@ const levels = [
     {
         level: 2,
         story: `
-   __||__  
-  / .--. \\  
-  / /    \\ \\  
- | |      | |  
-  \\ \\    / /  
-   '--' '--'  
-Village Square: Robin's archery skills are tested before a crowd.`,
-        targetHint: "Try a balanced angle.",
+   As the sun set over Sherwood Forest, Robin Hood stood ready for one final shot. The Sheriff of Nottingham had stolen the people’s treasure, and Robin was determined to get it back. A silver crown sat 100 meters away, and Robin, with his trusty bow, aimed at a perfect 45-degree angle.
+
+He pulled back the string, and the arrow flew into the air with precision, reaching its peak before descending and striking the crown, knocking it from its stand. The Merry Men cheered as Robin retrieved the crown.
+
+"One shot, one victory," Robin said, smiling. "This is just the beginning." And with that, he vowed to continue fighting for justice in Sherwood Forest.`,
+        targetHint: "Robin Hood aims at a silver crown placed 100 meters away, shooting an arrow at a 45° angle with an initial velocity of 40 m/s. How long does it take for the arrow to reach the target, and at what height will it strike the crown? Assume no air resistance.",
         correctAngle: 35,
     },
 ];
