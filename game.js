@@ -49,8 +49,8 @@ as Robin retrieved the crown.
   he vowed to continue fighting for
   justice in Sherwood Forest.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   ⠀⠀`,
-        targetHint: "Robin Hood aims at a silver crown placed 100 meters away, shooting an arrow at a 45° angle with an initial velocity of 40 m/s. How long does it take for the arrow to reach the target, and at what height will it strike the crown? Assume no air resistance.",
-        correctAngle: 35,
+        targetHint: "Robin Hood aims at a silver crown placed 100 meters away, shooting an arrow at a 45° angle with an initial velocity of 40 m/s. How long does it take for the arrow to reach the target? Assume no air resistance.",
+        correctAngle: 3.54 ,
     },
 ];
 
