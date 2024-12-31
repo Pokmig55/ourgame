@@ -52,41 +52,7 @@ as Robin retrieved the crown.
         targetHint: "Robin Hood aims at a silver crown placed 100 meters away, shooting an arrow at a 45° angle with an initial velocity of 40 m/s. How long does it take for the arrow to reach the target? Assume no air resistance.",
         correctAngle: 3.54 ,
     },
-       {
-        level: 3,
-        story: `
-         
-          o 
-       o^/|\^o
-    o_^|\/*\/|^_o
-   o\*`'.\|/.'`*/o
-    \\\\\\|//////
-     {><><@><><}
-      """""""""
-As Robin Hood took aim at the silver crown,
- he knew the fight wasn't over. That night,
- he revealed a new challenge to 
- the Merry Men: the Sheriff had built a massive 
- trebuchet aimed at Sherwood Forest, threatening
- the villagers. Robin’s plan was to use his bow
- to shoot an arrow that would sever the
- counterweight rope, disabling the machine.
-
-At dawn, they approached the trebuchet,
-and Robin saw it was 25 meters away.
-The counterweight rope was hanging loosely
-beneath the arm, and Robin needed to strike
-it with precision. With his bow ready, he 
-calculated the distance, speed, and angle 
-of his shot.
-
-He pulled back the string,
-aimed carefully, and prepared to fire.`,
-  
-           targetHint: "Robin must shoot an arrow to hit the counterweight rope of the trebuchet, which is 25 meters away. He plans to shoot at a 30-degree angle, with an initial speed of 40 m/s. What is the maximum height the arrow reaches before descending? (Neglect air resistance and assume gravity is 9.8 m/s²).",
-
-        correctAngle: 20.41,
-    },
+     
     
 
 
