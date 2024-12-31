@@ -127,7 +127,7 @@ from the sheriff
         correctAngle: 1298,
     },
       {
-        level: 1,
+        level: 5,
         story: `
  Glad that the ammo didn't hit him.
  Robin hood immediately planned his 
