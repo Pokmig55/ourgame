@@ -123,14 +123,7 @@ from the sheriff
         targetHint: "The Sheriff, determined to destroy Sherwood Forest, built a massive trebuchet which 15 meters from ground and prepared to fire. Armed with his musket, he aimed at Robin Hood and his gang.As the Sheriff fired, the bullet with velocity 120 m/s , hit one of the merry gangs who were standing meters away from the sheriff with an angle of 30° with the plane. Robin hood noticed that. He immediately moved 6 meters away from the sheriff. But would it hit Robin hood?",
         correctAngle: 1298,
     },
-     {
-        level: 5,
-        story: `
 
-`,
-        targetHint: "The noble carriage was already on a hill that had a height 3.05 meters high and 10 meters away, awaited his arrow. Standing at 2.00 meters tall, Robin needed to shoot The horse-drawn carriage to cut the rope that tied the sack containing the gold coins.With angle of 40° from the horizontal,What is the speed of the arrow to hit the target?",
-        correctAngle: 10.67,
-    },
 ];
 
 let currentLevel = 0;
