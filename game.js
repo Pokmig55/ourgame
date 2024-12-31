@@ -55,7 +55,15 @@ as Robin retrieved the crown.
        {
         level: 3,
         story: `
- As Robin Hood took aim at the silver crown,
+         
+          o 
+       o^/|\^o
+    o_^|\/*\/|^_o
+   o\*`'.\|/.'`*/o
+    \\\\\\|//////
+     {><><@><><}
+      """""""""
+As Robin Hood took aim at the silver crown,
  he knew the fight wasn't over. That night,
  he revealed a new challenge to 
  the Merry Men: the Sheriff had built a massive 
@@ -77,6 +85,50 @@ aimed carefully, and prepared to fire.`,
   
            targetHint: "Robin must shoot an arrow to hit the counterweight rope of the trebuchet, which is 25 meters away. He plans to shoot at a 30-degree angle, with an initial speed of 40 m/s. What is the maximum height the arrow reaches before descending? (Neglect air resistance and assume gravity is 9.8 m/s²).",
 
+        correctAngle: 20.41,
+    },
+      {
+        level: 4,
+        story: ` 
+
+⠀⠀⠀⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣹⣷⣶⣶⣶⣶⣦⣤⣤⣤⣤⣤⣤⣀⣀⣀⣀⣀⣀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⠟⠋⠉⢉⡉⠙⢿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠀
+⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⠇⠀⠺⣦⣾⣇⣀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣾⣿⠟⠀⢸⡄⠰⠖⢻⡿⣿⡉⠀⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣠⣴⣿⡿⠃⠀⠀⠈⢷⣄⠀⠛⠁⠈⢁⣴⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠸⠿⠿⠿⠟⠀⠀⠀⠀⠀⠀⠙⠛⠷⠶⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+As the Sheriff of Nottingham tightened
+his grip on Sherwood Forest, he devised
+a new weapon: a powerful cannon capable
+of launching projectiles at great distances.
+To test its might, the Sheriff aimed at a
+tree 4 meter away, instructing his soldiers
+to fire at an angle of 30 degrees.
+The projectile soared through the air,
+landing perfectly at the base of the tree.
+The Sheriff smirked, confident in his new weapon.
+
+"Hahaha! Eat this bullet Robin!" *The sheriff
+said confidently but then the bullet suddenly
+hit one of the Merry gang members. Robin was
+enraged but he was lacking arrows to return the
+shot. So he is slowly walking back 6 meters away
+from the sheriff
+`,
+        targetHint: "The Sheriff, determined to destroy Sherwood Forest, built a massive trebuchet which 15 meters from ground and prepared to fire. Armed with his musket, he aimed at Robin Hood and his gang.As the Sheriff fired, the bullet with velocity 120 m/s , hit one of the merry gangs who were standing meters away from the sheriff with an angle of 30° with the plane. Robin hood noticed that. He immediately moved 6 meters away from the sheriff. But would it hit Robin hood?",
+        correctAngle: 1298,
+    },
+     {
+        level: 5,
+        story: `
+
+`,
+        targetHint: "The noble carriage was already on a hill that had a height 3.05 meters high and 10 meters away, awaited his arrow. Standing at 2.00 meters tall, Robin needed to shoot The horse-drawn carriage to cut the rope that tied the sack containing the gold coins.With angle of 40° from the horizontal,What is the speed of the arrow to hit the target?",
         correctAngle: 10.67,
     },
 ];
@@ -103,10 +155,10 @@ function handleInput() {
     const angleInput = parseFloat(document.getElementById("angle-input").value);
     const { correctAngle } = levels[currentLevel];
     if (Math.abs(angleInput - correctAngle) <= tolerance) {
-        logFeedback("Great shot! You've hit the target!");
+        logFeedback("Great ! You've guess correct answer!");
         document.getElementById("next-level-button").style.display = "block";
     } else {
-        logFeedback("Missed! Try again.", true);
+        logFeedback("Wrong! Try again.", true);
     }
 }
 
