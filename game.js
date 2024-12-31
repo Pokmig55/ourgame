@@ -126,6 +126,29 @@ from the sheriff
         targetHint: "The Sheriff, determined to destroy Sherwood Forest, built a massive trebuchet which 15 meters from ground and prepared to fire. Armed with his musket, he aimed at Robin Hood and his gang.As the Sheriff fired, the bullet with velocity 120 m/s , hit one of the merry gangs who were standing meters away from the sheriff with an angle of 30° with the plane. Robin hood noticed that. He immediately moved 6 meters away from the sheriff. But would it hit Robin hood?",
         correctAngle: 1298,
     },
+      {
+        level: 1,
+        story: `
+ Glad that the ammo didn't hit him.
+ Robin hood immediately planned his 
+ next plan to stop the sheriff. Then
+ he noticed, one of his gang, Nathaniel,
+ the womanizer holding a crossbow.
+ A mentol bulb appears!
+
+"Nathaniel! Hand me your crossbow!" Robin 
+hood shouted urgently. Nathaniel with his smug
+face handing him the crossbow with
+a smirk and winking at him.
+ "Glad to hand this to you, little munchkin"
+
+Robin hood cringed by his words but he immediately
+took the crossbow with him and brought himself
+behind a tree to shoot the sheriff
+ `,
+        targetHint: "Robin aimed the crossbow horizontally at the sheriff 40 m away as he hid  On the tree out of his sight. The arrow hits directly through the sheriff chest which is 15 meter below the spot at which it was aimed. What is the initial velocity of the arrow?",
+        correctAngle: 22.9 ,
+    },
      
     
 
