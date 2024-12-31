@@ -90,6 +90,42 @@ aimed carefully, and prepared to fire.`,
 
         correctAngle: 20.41,
     },
+    {
+        level: 4,
+        story: ` 
+
+⠀⠀⠀⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣹⣷⣶⣶⣶⣶⣦⣤⣤⣤⣤⣤⣤⣀⣀⣀⣀⣀⣀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⠟⠋⠉⢉⡉⠙⢿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠀
+⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⠇⠀⠺⣦⣾⣇⣀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣾⣿⠟⠀⢸⡄⠰⠖⢻⡿⣿⡉⠀⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣠⣴⣿⡿⠃⠀⠀⠈⢷⣄⠀⠛⠁⠈⢁⣴⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠸⠿⠿⠿⠟⠀⠀⠀⠀⠀⠀⠙⠛⠷⠶⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+As the Sheriff of Nottingham tightened
+his grip on Sherwood Forest, he devised
+a new weapon: a powerful cannon capable
+of launching projectiles at great distances.
+To test its might, the Sheriff aimed at a
+tree 4 meter away, instructing his soldiers
+to fire at an angle of 30 degrees.
+The projectile soared through the air,
+landing perfectly at the base of the tree.
+The Sheriff smirked, confident in his new weapon.
+
+"Hahaha! Eat this bullet Robin!" *The sheriff
+said confidently but then the bullet suddenly
+hit one of the Merry gang members. Robin was
+enraged but he was lacking arrows to return the
+shot. So he is slowly walking back 6 meters away
+from the sheriff
+`,
+        targetHint: "The Sheriff, determined to destroy Sherwood Forest, built a massive trebuchet which 15 meters from ground and prepared to fire. Armed with his musket, he aimed at Robin Hood and his gang.As the Sheriff fired, the bullet with velocity 120 m/s , hit one of the merry gangs who were standing meters away from the sheriff with an angle of 30° with the plane. Robin hood noticed that. He immediately moved 6 meters away from the sheriff. But would it hit Robin hood?",
+        correctAngle: 1298,
+    },
      
     
 
