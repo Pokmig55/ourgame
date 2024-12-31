@@ -56,13 +56,6 @@ as Robin retrieved the crown.
         level: 3,
         story: `
          
-          o 
-       o^/|\^o
-    o_^|\/*\/|^_o
-   o\*`'.\|/.'`*/o
-    \\\\\\|//////
-     {><><@><><}
-      """""""""
 As Robin Hood took aim at the silver crown,
  he knew the fight wasn't over. That night,
  he revealed a new challenge to 
